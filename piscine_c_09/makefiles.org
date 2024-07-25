@@ -1,0 +1,17 @@
+#+title: Makefiles
+
+* Object files
+- prevents from compiling all files together, and instead only files that had changed
+-
+
+** Declarations
+- on the left side
+#+begin_src makefile
+MY_VAR = this is a string
+
+MY_OTHER_VAR = hello $(MY_VAR)	# Variable substitution
+
+MY_OTHER_VAR += "Bye !"
+#+end_src
+
+** Rules

@@ -1,0 +1,4 @@
+#+title: Notes
+* Exam registration
+- need to register under projects
+- need to register under events
