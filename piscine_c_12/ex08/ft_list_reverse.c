@@ -12,17 +12,20 @@
 
 #include "ft_list.h"
 #include <stddef.h>
+
 /* #include <stdio.h> */
 /* #include <stdlib.h> */
 /* #include <unistd.h> */
 
-void ft_list_reverse(t_list **begin_list) {
-	if (*begin_list == NULL)
-		return;
-	if ((*begin_list)->next == NULL)
-		return;
+void	ft_list_reverse(t_list **begin_list)
+{
+	t_list	*head;
 
-	t_list* head = *begin_list;
+	if (*begin_list == NULL)
+		return ;
+	if ((*begin_list)->next == NULL)
+		return ;
+	head = *begin_list;
 	*begin_list = head->next;
 	ft_list_reverse(begin_list);
 	head->next->next = head;
@@ -53,7 +56,6 @@ void ft_list_reverse(t_list **begin_list) {
 /* 	return ; */
 /* } */
 
-
 /* int main() { */
 /* 	int i = 0; */
 /* 	int arr[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; */
@@ -83,5 +85,5 @@ void ft_list_reverse(t_list **begin_list) {
 /* 	} */
 /* 	printf("\n"); */
 
-/*     return 0; */
+/*     return (0); */
 /* } */
