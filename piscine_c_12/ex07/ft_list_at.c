@@ -15,11 +15,9 @@
 t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
 	int		i;
-	t_list	*ret;
 
 	i = 0;
-	ret = begin_list;
-	while (i++ < nbr && ret)
-		ret = ret->next;
+	while (i++ < nbr && begin_list)
+		begin_list = begin_list->next;
 	return (begin_list);
 }

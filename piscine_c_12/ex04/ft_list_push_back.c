@@ -15,17 +15,12 @@
 
 void	ft_list_push_back(t_list **begin_list, void *data)
 {
-	t_list	*new;
-	t_list	*head;
+	t_list	dummy;
+	t_list	*head = &dummy;
+	dummy.next = *begin_list;
 
-	new = ft_create_elem(data);
-	if (*begin_list == NULL)
-	{
-		*begin_list = new;
-		return ;
-	}
-	head = *begin_list;
 	while (head->next)
 		head = head->next;
-	head->next = new;
+	head->next = ft_create_elem(data);
+	*begin_list = dummy.next;
 }

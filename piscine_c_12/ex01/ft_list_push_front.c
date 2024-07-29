@@ -14,10 +14,9 @@
 
 void	ft_list_push_front(t_list **begin_list, void *data)
 {
-	t_list	*new_head;
-
-	new_head = ft_create_elem(data);
-	new_head->next = *begin_list;
-	*begin_list = new_head;
+	t_list	*new;
+	new = ft_create_elem(data);
+	new->next = *begin_list;
+	*begin_list = new;
 	return ;
 }
