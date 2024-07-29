@@ -1,8 +1,8 @@
 :PROPERTIES:
-:GPTEL_MODEL: gpt-3.5-turbo
+:GPTEL_MODEL: gpt-4o
 :GPTEL_BACKEND: ChatGPT
 :GPTEL_SYSTEM: You are a large language model living in Emacs and a helpful assistant. Try to avoid long answers.
-:GPTEL_BOUNDS: ((489 . 1005) (1066 . 1925) (1958 . 3673) (3733 . 4987) (4988 . 5012) (5013 . 5968) (5969 . 6169) (6230 . 7593))
+:GPTEL_BOUNDS: ((467 . 983) (1044 . 1903) (1936 . 3651) (3711 . 4965) (4966 . 4990) (4991 . 5946) (5947 . 6146))
 :END:
 
 *** inside a function with the following prototype =void	ft_list_foreach(t_list *begin_list, void (*f)(void *))=, may i use the function like f() or do i need to do (*f)()?
@@ -171,40 +171,90 @@ Using Merge Sort for a linked list leverages the ability to divide and merge lis
 
 *** what is a simpler sorting algorithm that can be used?
 
-A simpler sorting algorithm that can be used for a linked list is /Insertion Sort/. It is straightforward to implement and works well for small or nearly sorted lists.
 
-**** Insertion Sort for Linked Lists:
+A simpler sorting algorithm that can be used is /Insertion Sort/. 
 
-1. Start with an initially empty sorted list.
-2. Iterate through the original list, removing one element at a time.
-3. Find the correct position in the sorted list and insert the element.
-4. Repeat until the original list is empty and the sorted list contains all the elements in sorted order.
+Insertion Sort works by iterating over the list and "inserting" each element into its correct position. It is efficient for small lists or nearly sorted lists.
 
-**** Implementation Outline:
+Here's a simple outline of how Insertion Sort works:
+1. Start with the second element in the list.
+2. Compare this element with the one before it, moving elements if necessary to insert it in the correct position.
+3. Continue this process for each element until the entire list is sorted.
+
+Insertion Sort has an average-case time complexity of O(n^2) but can be O(n) for nearly sorted lists. Its simplicity and ease of implementation make it a good choice for small datasets or as a building block for more complex sorting algorithms.
+
+*** give me the implementation outline
+
+Here's a basic outline of an Insertion Sort implementation in C:
+
 #+begin_src c
-struct ListNode {
-    int value;
-    struct ListNode /next;
-};
+void insertionSort(int arr[], int n) {
+    int i, key, j;
+    for (i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
 
-// Function to insert a new node into the sorted part of the list
-void sortedInsert(struct ListNode* sortedRef, struct ListNode/ newNode) {
-    if (/sortedRef == NULL || (/sortedRef)->value >= newNode->value) {
-        newNode->next = /sortedRef;
-        /sortedRef = newNode;
-    } else {
-        struct ListNode/ current = /sortedRef;
-        while (current->next != NULL && current->next->value < newNode->value) {
-            current = current->next;
+        // Move elements of arr[0..i-1] that are greater than key to one position ahead of their current position
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
         }
-        newNode->next = current->next;
-        current->next = newNode;
+        arr[j + 1] = key;
     }
 }
+#+end_src
 
-// Function to sort a linked list using Insertion Sort
-void insertionSort(struct ListNode* headRef) {
-    struct ListNode/ sorted = NULL;
-    struct ListNode/ current = /headRef;
+In this implementation:
+- The function =insertionSort= takes an integer array =arr= and its size =n=.
+- It iterates through the array, comparing and shifting elements to insert each element in its correct sorted position.
+- The key element is compared with elements before it and inserted into the correct position by shifting larger elements one position to the right.
 
-    while (current != NULL)
+This is a simple and efficient way to implement Insertion Sort in C.
+
+*** but for a linked list
+
+Here's a basic outline of an Insertion Sort implementation for a linked list:
+
+1. Define a structure for each node in the linked list:
+#+begin_src c
+struct ListNode {
+    int data;
+    struct ListNode* next;
+};
+#+end_src
+
+2. Define a function to insert a node into a sorted linked list:
+#+begin_src c
+void sortedInsert(struct ListNode** headRef, struct ListNode* newNode) {
+    struct ListNode dummy;
+    struct ListNode* current = &dummy;
+    dummy.next = *headRef;
+
+    while (current->next != NULL && current->next->data < newNode->data) {
+        current = current->next;
+    }
+
+    newNode->next = current->next;
+    current->next = newNode;
+    *headRef = dummy.next;
+}
+#+end_src
+
+3. Define an Insertion Sort function for the linked list:
+#+begin_src c
+void insertionSortLinkedList(struct ListNode** headRef) {
+    struct ListNode* sorted = NULL;
+    struct ListNode* current = *headRef;
+
+    while (current != NULL) {
+        struct ListNode* next = current->next;
+        sortedInsert(&sorted, current);
+        current = next;
+    }
+
+    *headRef = sorted;
+}
+#+end_src
+
+This implementation sorts the linked list in ascending order using Insertion Sort by inserting each node into the correct position in the sorted list.
+
