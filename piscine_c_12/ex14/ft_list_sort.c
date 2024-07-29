@@ -39,7 +39,7 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 {
 	t_list	*head;
 	t_list	*new;
-	t_list	*tmp;
+	t_list	*next;
 
 	if (begin_list == NULL)
 		return ;
@@ -47,9 +47,9 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)(void *, void *))
 	new = NULL;
 	while (head)
 	{
-		tmp = head->next;
+		next = head->next;
 		insert_sorted(&new, head, cmp);
-		head = tmp;
+		head = next;
 	}
 	*begin_list = new;
 	return ;
