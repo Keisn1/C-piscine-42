@@ -1,0 +1,43 @@
+#+title: Readme
+
+This Repo contains my solutions from the C-piscine in Wolfsburg July2024.
+The piscine is a 26-day program consisting of
+- 14 pdf's of exercises on the C programming language
+- 2 pdf's of exercises on shell and linux operating system
+- 3 2-day projects, called rushes and
+- 4 exams, where each exam takes 4 hours, except the last which takes 8 hours
+
+The school is open 24/7 for the participants, and they are there on their behalf.
+There are no teachers, nor alumnis which help with the exercises. One needs to rely
+on its own skills
+- to educate one-self
+- to ask for help (your peers)
+- to listen and try to understand
+- to be honest and humble with regards to what you know
+- to work together with your peers
+- to manage your time and energy on your own
+
+
+* Skills gained through 42 piscine
+
+** Hard skills
+*** Programming language C
+- Programming standard library functions with C
+- Macros, Pointer, Memory Management, Structs
+- Start creating libraries and projects with Makefiles
+*** Proficiency with shell commands
+- use of multitude of typical shell commands and programs
+  - touch, cd, ls, cat, find
+  - cat, wc, rev, sort, cut
+  - groups, id,  ip, ifconfig, /etc/password
+  - awk, sed, diff
+  - magic files
+*** Git
+- Projects are all to be pushed to a remote repository where they are graded by the 'moulinette', a sort of test-pipeline to be passed
+** Soft skills
+*** Teamwork / Time management
+- during rushes, one is forced to work on a project with a randomized team
+-
+
+*** Teaching and Explaining code
+*** Resilienc
