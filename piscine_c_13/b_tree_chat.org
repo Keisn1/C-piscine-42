@@ -1,0 +1,96 @@
+:PROPERTIES:
+:GPTEL_MODEL: gpt-3.5-turbo
+:GPTEL_BACKEND: ChatGPT
+:GPTEL_SYSTEM: You are a large language model living in Emacs and a helpful assistant. Try to avoid long answers.
+:GPTEL_BOUNDS: ((364 . 525) (554 . 811) (870 . 999) (1028 . 1403) (1435 . 1593) (1621 . 1994) (2028 . 2217) (2244 . 2625) (2705 . 3121))
+:END:
+
+*** what is prefix traversal? be brief
+
+Prefix traversal is a way to visit and process nodes in a tree data structure starting from the root, then to the left subtree, and finally to the right subtree.
+
+*** ok explain a bit more
+
+In prefix traversal, also known as pre-order traversal, you visit the current node first, then recursively visit the left subtree, and finally the right subtree. This traversal technique is commonly used in binary trees to process nodes in a specific order.
+
+*** can i use a dummy when implementing this algorithm?
+
+Yes, you can use a dummy node as a placeholder when implementing prefix traversal algorithm to simplify the implementation logic.
+
+*** give a algorithm in c
+
+Sure, here is a simple recursive algorithm in C for prefix traversal of a binary tree:
+
+#+begin_src c
+void prefixTraversal(struct Node* root) {
+    if (root == NULL) {
+        return;
+    }
+
+    printf("%d ", root->data); // Process current node
+    prefixTraversal(root->left); // Recur on left subtree
+    prefixTraversal(root->right); // Recur on right subtree
+}
+#+end_src
+
+*** what is infix traversal?
+
+In infix traversal, also known as in-order traversal, you visit and process nodes in a binary tree in the order of: left subtree, current node, right subtree.
+
+*** give me an algorithm
+
+Here is a simple recursive algorithm in C for inorder traversal of a binary tree:
+
+#+begin_src c
+void inorderTraversal(struct Node* root) {
+    if (root == NULL) {
+        return;
+    }
+
+    inorderTraversal(root->left); // Recur on left subtree
+    printf("%d ", root->data); // Process current node
+    inorderTraversal(root->right); // Recur on right subtree
+}
+#+end_src
+
+*** what is suffix traversal?
+
+
+Suffix traversal, also known as post-order traversal, involves visiting and processing nodes in a binary tree in the following order: left subtree, right subtree, and then the current node.
+*** give me an algorithm
+
+Here is a simple recursive algorithm in C for postorder traversal of a binary tree:
+
+#+begin_src c
+void postorderTraversal(struct Node* root) {
+    if (root == NULL) {
+        return;
+    }
+
+    postorderTraversal(root->left); // Recur on left subtree
+    postorderTraversal(root->right); // Recur on right subtree
+    printf("%d ", root->data); // Process current node
+}
+#+end_src
+
+*** can you give me an algorithm for inserting data in a sorted binary tree?
+
+Here is a simple algorithm in C for inserting data into a sorted binary tree:
+
+#+begin_src c
+struct Node* insertNode(struct Node* root, int data) {
+    if (root == NULL) {
+        return createNode(data);
+    }
+
+    if (data < root->data) {
+        root->left = insertNode(root->left, data);
+    } else if (data > root->data) {
+        root->right = insertNode(root->right, data);
+    }
+
+    return root;
+}
+#+end_src
+
+***
