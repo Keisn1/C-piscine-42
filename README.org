@@ -8,7 +8,7 @@ The piscine is a 26-day program consisting of
 - 4 exams, where each exam takes 4 hours, except the last which takes 8 hours
 
 The school is open 24/7 for the participants, and they are there on their behalf.
-There are no teachers, nor alumnis which help with the exercises. One needs to rely
+There are no teachers, nor alumnis that could help with the exercises. One needs to rely
 on its own skills
 - to educate one-self
 - to ask for help (your peers)
@@ -35,16 +35,15 @@ on its own skills
 *** Git
 - Projects ought to be pushed to a remote repository where they are graded by the 'moulinette', a sort of test-pipeline to be passed
 ** Soft skills
+*** Teaching and Explaining code
+- The school is based on a peer-to-peer learning system, meaning that you learn together with your peers, you learn by your peers and you are teaching your peers
+- one needs to be pro-active in his/her pusuit to succeed in the various challenges
 *** Teamwork / Time management
 - during rushes, one is forced to work on a project with a randomized team
 - the setting will force you to deal with problems that naturally arise in groups:
   - Team and Time management
   - group communication, dealing with language barriers, communicating across different channels
   - deal with frustration and other negative emotions inside the group
-*** Teaching and Explaining code
-- The school is based on a peer-to-peer learning system
-*** Resilienc
-
 * Grades
 | Projects |     Grade |
 |----------+-----------|
