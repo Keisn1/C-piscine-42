@@ -44,10 +44,10 @@ on its own skills
   - Team and Time management
   - group communication, dealing with language barriers, communicating across different channels
   - deal with frustration and other negative emotions inside the group
-* Grades
+* Curriculum
 | Projects |     Grade |
 |----------+-----------|
-| Shell00  |      100% |
+| [[https://github.com/Keisn1/C-piscine-42/tree/master/piscine_shell_00][Shell00]]  |      100% |
 | Shell01  |       85% |
 |          |           |
 | C00      |       90% |
